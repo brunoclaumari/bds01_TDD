@@ -25,7 +25,7 @@ public class DepartmentControllerIT {
 	public void findAllShouldReturnAllResourcesSortedByName() throws Exception {
 		
 		ResultActions result =
-				mockMvc.perform(get("/departments")
+				mockMvc.perform(get("/departments")//?page=0&size=10&sort=name
 					.contentType(MediaType.APPLICATION_JSON));
 
 		result.andExpect(status().isOk());
